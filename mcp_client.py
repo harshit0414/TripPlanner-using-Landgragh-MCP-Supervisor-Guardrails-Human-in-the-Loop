@@ -66,7 +66,7 @@ def _subprocess_env(**updates: str | None) -> dict[str, str]:
 # =========================================================
 
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-120b",
     api_key=_require_env("GROQ_API_KEY", GROQ_API_KEY),
 )
 
@@ -104,7 +104,7 @@ client = MultiServerMCPClient(
 
             # Uses the weather server inside the current project folder.
             "args": [
-                str(WEATHER_SERVER_PATH),
+                r"D:\laptop\project\tripplanner\TripPlanner-using-Landgragh-MCP-Supervisor-Guardrails-Human-in-the-Loop\custom_weather_mcp_server.py",
             ],
 
             "env": _subprocess_env(
